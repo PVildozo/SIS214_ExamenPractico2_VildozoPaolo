@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header role="banner" class="animated-header">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Cambiar tema de color">
+                <span id="theme-icon">🌙</span> <span id="theme-text">Modo Oscuro</span>
+            </button>
+        <nav aria-label="Navegación principal del sitio">
+            <script src="js/main.js"></script>
+            <ul>
+                <li><a href="index.html">Yo</a></li>
+                <li><a href="perfil.html">Perfil Profesional</a></li>
+                <li><a href="formacion.html">Formación Académica</a></li>
+                <li><a href="experiencia.html">Experiencia Profesional</a></li>
+                <li><a href="habilidades.html">Habilidades Técnicas</a></li>
+                <li><a href="cursos.html">Certificaciones y Cursos</a></li>
+                <li><a href="idiomas.html">Idiomas</a></li>
+                <li><a href="proyectos.html">Proyectos Destacados</a></li>
+                <li><a href="portafolio.html">Portafolio de Archivos Multimedia</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main id="main-content" role="main">
+        <section id="portafolio" aria-labelledby="portafolio-heading">
+            <article >
+                <h2>Portafolio de Archivos Multimedia</h2>
+                <h3>Panel de Pedidos de la Pagina Werb</h3>
+                <figure>
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="./assets/images/pizza.png">
+                        <source media="(min-width: 450px)" srcset="./assets/images/pizza.png">
+                        <img src="./assets/images/pizza.png" alt="imagen_repo" height="400" width="600" loading="lazy">
+                    </picture>
+                    <figcaption>Apartado de pedidos de la pagina web</figcaption>
+                </figure>
+            </article>
+            <article>
+                <h3>Audio de Presentación</h3>
+                <figure>
+                    <audio controls preload="metadata" aria-label="Pista de audio presentacion" role="group">
+                        <source src="./assets/audio/audio_mati.aac" type="audio/mpeg">
+                    </audio>
+                    <figcaption>Presentacion <em>Paolo Vildozo</em></figcaption>
+                </figure>
+            </article>
+            <article>
+                <h3>Video Explicativo Codigo Hospital</h3>
+                <figure>
+                    <video controls width="560" height="315" preload="metadata" aria-label="video explicativo java"  role="group">
+                        <source src="./assets/video/video_proyecto1.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Video explicativo del programa de registro de citas medicas</figcaption>
+                </figure>
+            </article>
+    </section>
+    </main>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +8,38 @@
     <script src="js/main.js"></script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <header role="banner" class="animated-header">
+        <div class="header-top">
         <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Cambiar tema de color">
-                <span id="theme-icon">🌙</span> <span id="theme-text">Modo Oscuro</span>
-            </button>
-        <nav aria-label="Navegación principal del sitio">
-            <ul>
-                <li><a href="index.html">Yo</a></li>
-                <li><a href="perfil.html">Perfil Profesional</a></li>
-                <li><a href="formacion.html">Formación Académica</a></li>
-                <li><a href="experiencia.html">Experiencia Profesional</a></li>
-                <li><a href="habilidades.html">Habilidades Técnicas</a></li>
-                <li><a href="cursos.html">Certificaciones y Cursos</a></li>
-                <li><a href="idiomas.html">Idiomas</a></li>
-                <li><a href="proyectos.html">Proyectos Destacados</a></li>
-                <li><a href="portafolio.html">Portafolio de Archivos Multimedia</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
-            </ul>
-        </nav>
-        <hr>
+            <span id="theme-icon">🌙</span> <span id="theme-text">Modo Oscuro</span>
+        </button>
+
+    
+        <label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú de navegación">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+    </div>
+
+    <!-- Checkbox oculto para alternar la visibilidad del menú -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox" aria-hidden="true">
+
+    <nav aria-label="Navegación principal del sitio" class="main-nav">
+        <ul>
+            <li><a href="index.html">Yo</a></li>
+            <li><a href="perfil.html">Perfil Profesional</a></li>
+            <li><a href="formacion.html">Formación Académica</a></li>
+            <li><a href="experiencia.html">Experiencia Profesional</a></li>
+            <li><a href="habilidades.html">Habilidades Técnicas</a></li>
+            <li><a href="cursos.html">Certificaciones y Cursos</a></li>
+            <li><a href="idiomas.html">Idiomas</a></li>
+            <li><a href="proyectos.html">Proyectos Destacados</a></li>
+            <li><a href="portafolio.html">Portafolio de Archivos Multimedia</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
     </header>
     <main id="main-content" role="main">
          <section id="perfil" aria-labelledby="perfil-heading">

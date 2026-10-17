@@ -1,19 +1,64 @@
-@keyframes modalPop {
-from {
-    opacity: 0;
-    transform: translate(-50%, -45%) scale(0.92);
-}
-to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-}
+/* ==========================================
+   KEYFRAMES DE ANIMACIONES
+   ========================================== */
+
+/* Entrada suave de contenido */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Entrada descendente para el encabezado */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulso brillante para elementos destacados */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(230, 57, 86, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(230, 57, 86, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(230, 57, 86, 0);
+    }
+}
+
+/* Modal Pop */
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -46%) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* ==========================================
+   CLASES DE UTILIDAD DE ANIMACIÓN
+   ========================================== */
 .animate-fade-in {
     animation: fadeIn var(--transition-normal) ease-out forwards;
 }
 
-.animate-header {
+.animated-header {
     animation: fadeInDown 0.6s ease-out forwards;
 }
 

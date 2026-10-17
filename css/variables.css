@@ -1,74 +1,68 @@
+/* Carga de Tipografías desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 /* --- MODO OSCURO (TEMA BASE: AUTO CLÁSICO / GUINDA METALIZADO) --- */
 :root,
 [data-theme="dark"] {
   /* ==========================================
      PALETA DE COLORES Y SUPERFICIES
      ========================================== */
-  /* Colores Principales (Guinda y Carmesí) */
-  --color-primary: #8c1b30;           /* Rojo Vino Intenso */
-  --color-primary-light: #a8233d;     /* Guinda Metalizado Claro */
-  --color-primary-dark: #5c0d1e;      /* Vino Profundo Sombra */
+  --color-primary: #8c1b30;
+  --color-primary-light: #a8233d;
+  --color-primary-dark: #5c0d1e;
 
-  /* Destellos Metálicos y Luces */
-  --color-gold-old: #dcb36c;          /* Cromo Dorado */
-  --color-gold-warm: #f2cb85;         /* Luz Cálida  */
-  --color-marfil: #ebdccb;            /* Marfil Seda */
-  --color-link-red: #e63956;          /* Rojo Carmesí Brillante */
+  --color-gold-old: #dcb36c;
+  --color-gold-warm: #f2cb85;
+  --color-marfil: #ebdccb;
+  --color-link-red: #e63956;
   --color-rose-glow: rgba(230, 57, 86, 0.25);
 
-  /* Fondos y Superficies */
-  --bg-body: #16080b;                 /* Vino Oscuro Profundo  */
-  --bg-surface: #260e14;              /* Guinda Metalizado */
-  --bg-card: #260e14;                 /* Tarjetas integradas */
-  --bg-card-hover: #32131b;           /* Tarjeta al pasar el cursor */
-  --bg-header: rgba(22, 8, 11, 0.9);  /* Encabezado fijo con desenfoque */
-  --input-bg: #260e14;                /* Fondo de campos de texto */
-  --meter-bg: #32131b;                /* Base del medidor / rango */
-  --meter-fill: #e63956;              /* Relleno carmesí */
+  --bg-body: #16080b;
+  --bg-surface: #260e14;
+  --bg-card: #260e14;
+  --bg-card-hover: #32131b;
+  --bg-header: rgba(22, 8, 11, 0.9);
+  --input-bg: #260e14;
+  --meter-bg: #32131b;
+  --meter-fill: #e63956;
 
-  /* Tipografía y Textos */
-  --text-main: #f8f4ef;               /* Blanco Cuero Crema */
-  --text-primary: #f8f4ef;            /* Alias de compatibilidad */
-  --text-secondary: #ebdccb;          /* Texto secundario Marfil */
-  --text-muted: #beaea3;              /* Beige Suave para fechas y subtítulos */
-  --text-gold: #dcb36c;               /* Texto acento dorado */
-  --text-inverse: #16080b;            /* Texto oscuro sobre elementos dorados */
+  --text-main: #f8f4ef;
+  --text-primary: #f8f4ef;
+  --text-secondary: #ebdccb;
+  --text-muted: #beaea3;
+  --text-gold: #dcb36c;
+  --text-inverse: #16080b;
 
-  /* Destacados y Marcas (<mark>) */
-  --bg-mark: #8c1b30;                 /* Fondo Rojo Vino */
-  --text-mark: #f8f4ef;               /* Texto claro */
+  --bg-mark: #8c1b30;
+  --text-mark: #f8f4ef;
 
-  /* Bordes, Divisores y Enfoque */
-  --color-divider: #8c1b30;           /* Líneas divisorias (<hr>) */
-  --color-border: #441a23;            /* Burdeos Metalizado Oscuro */
-  --border-color: #441a23;            /* Alias de compatibilidad */
-  --border-focus: #e63956;            /* Enfoque Carmesí */
+  --color-divider: #8c1b30;
+  --color-border: #441a23;
+  --border-color: #441a23;
+  --border-focus: #e63956;
 
-  /* Botones y Formularios */
-  --btn-primary-bg: #8c1b30;          /* Rojo Vino */
-  --btn-primary-text: #f8f4ef;        /* Texto crema */
+  --btn-primary-bg: #8c1b30;
+  --btn-primary-text: #f8f4ef;
 
-  /* Selección de texto y Barra de desplazamiento */
-  --selection-bg: #8c1b30;            /* Fondo de texto resaltado */
-  --selection-text: #f8f4ef;          /* Texto al seleccionar */
-  --scrollbar-track: #16080b;         /* Carril del scroll */
-  --scrollbar-thumb: #8c1b30;         /* Barra del scroll */
-  --scrollbar-thumb-hover: #dcb36c;   /* Scroll al pasar el cursor */
-  --scrollbar-thumb-active: #f2cb85;  /* Scroll al arrastrar */
+  --selection-bg: #8c1b30;
+  --selection-text: #f8f4ef;
+  --scrollbar-track: #16080b;
+  --scrollbar-thumb: #8c1b30;
+  --scrollbar-thumb-hover: #dcb36c;
+  --scrollbar-thumb-active: #f2cb85;
 
-  /* Información de Contacto (<address>) */
   --address-text: #beaea3;
   --address-bg: #260e14;
-  --address-border: #e63956;          /* Borde lateral brillante */
+  --address-border: #e63956;
   --address-link: #dcb36c;
   --address-link-hover: #f8f4ef;
 
   /* ==========================================
      TIPOGRAFÍA, ESPACIOS Y EFECTOS
      ========================================== */
-  --font-title: 'Playfair Display', 'Bodoni MT', Georgia, serif;
+  --font-title: 'Playfair Display', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-code: 'Fira Code', 'JetBrains Mono', monospace;
+  --font-code: 'Fira Code', monospace;
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -86,55 +80,48 @@
   --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* Sombras y Luces Nocturnas */
   --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.5); 
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
   --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.7);
   --shadow-glow: 0 0 20px rgba(230, 57, 86, 0.35);
   --shadow-gold: 0 0 15px rgba(220, 179, 108, 0.3);
 
-  /* Efectos de Cristal / Glassmorphism */
   --glass-backdrop: blur(14px) saturate(140%);
-  --glass-bg: rgba(38, 14, 20, 0.85);        /* Capa translúcida guinda metalizada */
-  --glass-border: rgba(220, 179, 108, 0.2);   /* Borde fino cromo dorado */
-  --border-glass: rgba(220, 179, 108, 0.2);  /* Alias de compatibilidad */
+  --glass-bg: rgba(38, 14, 20, 0.85);
+  --glass-border: rgba(220, 179, 108, 0.2);
+  --border-glass: rgba(220, 179, 108, 0.2);
 }
-/* --- MODO CLARO  --- */
+
+/* --- MODO CLARO --- */
 [data-theme="light"] {
-  /* Paleta Principal (Modo Claro) */
-  --color-primary: #5c0d1e;           /* Guinda Profundo */
-  --color-primary-light: #8c1b30;     /* Guinda Medio Metalizado */
-  --color-primary-dark: #3b0611;      /* Guinda Sombra Nocturna */
+  --color-primary: #5c0d1e;
+  --color-primary-light: #8c1b30;
+  --color-primary-dark: #3b0611;
   
-  /* Detalles Metálicos y Luces */
-  --color-gold-old: #a37833;          /* Oro Cromo Ajustado para Contraste en Fondo Claro */
-  --color-gold-warm: #80591b;         /* Oro Cálido Saturado para Hover */
-  --color-link-red: #c81d3b;          /* Rojo Carmesí  */
+  --color-gold-old: #a37833;
+  --color-gold-warm: #80591b;
+  --color-link-red: #c81d3b;
   --color-rose-glow: rgba(200, 29, 59, 0.12);
   --color-marfil: rgba(128, 30, 0, 0.87);
 
-  /* Fondos y Superficies */
-  --bg-body: #f9f5f0;                 /* Cuero Crema / Marfil Seda */
-  --bg-surface: #ffffff;              /* Tarjetas y Paneles Limpios */
+  --bg-body: #f9f5f0;
+  --bg-surface: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.88);
   --glass-backdrop: blur(12px);
   --bg-header: rgba(249, 245, 240, 0.9);
   --input-bg: #ffffff;
-  --meter-bg: #ebdccb;                /* Riel Marfil Suave */
+  --meter-bg: #ebdccb;
 
-  /* Tipografía*/
-  --text-main: #240a10;               /* Guinda Tonal / Madera Oscura (Sustituye al azul frío) */
-  --text-secondary: #4a2831;          /* Guinda Secundario Neutro */
-  --text-muted: #73565e;              /* Guinda Atenuado */
-  --text-gold: #80591b;               /* Oro Oscuro Lecturable */
-  --text-inverse: #f8f4ef;            /* Texto Claro sobre Botones Oscuros */
+  --text-main: #240a10;
+  --text-secondary: #4a2831;
+  --text-muted: #73565e;
+  --text-gold: #80591b;
+  --text-inverse: #f8f4ef;
 
-  /* Bordes y Cristales */
-  --color-border: rgba(68, 26, 35, 0.18); /* Borde Guinda Traslúcido */
-  --border-focus: #c81d3b;             /* Enfoque Rojo Carmesí */
+  --color-border: rgba(68, 26, 35, 0.18);
+  --border-focus: #c81d3b;
   --glass-border: rgba(68, 26, 35, 0.10);
 
-  /* Sombras Cálidas de Auto Clásico */
   --shadow-sm: 0 2px 6px rgba(38, 14, 20, 0.05);
   --shadow-md: 0 8px 24px rgba(38, 14, 20, 0.08);
   --shadow-lg: 0 16px 36px rgba(38, 14, 20, 0.12);

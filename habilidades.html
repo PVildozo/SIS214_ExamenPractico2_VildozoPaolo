@@ -10,23 +10,26 @@
 <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <header role="banner" class="animated-header">
-        <div class="header-top">
+    <div class="header-top">
         <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Cambiar tema de color">
             <span id="theme-icon">🌙</span> <span id="theme-text">Modo Oscuro</span>
         </button>
 
-    
-        <label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú de navegación">
+        <!-- Botón semántico del menú hamburguesa -->
+        <button type="button" 
+                id="hamburger-btn" 
+                class="hamburger-btn" 
+                aria-label="Abrir menú de navegación" 
+                aria-expanded="false" 
+                aria-controls="main-menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-        </label>
+        </button>
     </div>
 
-    <!-- Checkbox oculto para alternar la visibilidad del menú -->
-    <input type="checkbox" id="menu-toggle" class="menu-checkbox" aria-hidden="true">
-
-    <nav aria-label="Navegación principal del sitio" class="main-nav">
+    <!-- Menú de navegación principal -->
+    <nav id="main-menu" aria-label="Navegación principal del sitio" class="main-nav">
         <ul>
             <li><a href="index.html">Yo</a></li>
             <li><a href="perfil.html">Perfil Profesional</a></li>
@@ -40,7 +43,7 @@
             <li><a href="contactos.html">Contactos</a></li>
         </ul>
     </nav>
-    </header>
+</header>
 
     <main id="main-content" role="main">
         <section id="habilidades" aria-labelledby="habilidades-heading">

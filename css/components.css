@@ -551,21 +551,3 @@ dialog button:hover {
     text-align: center;
     font-weight: 500;
 }
-/* ==========================================
-   MAPA DE LEAFLET
-   ========================================== */
-.leaflet-map-container {
-    width: 100%;
-    height: 380px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-border);
-    margin-top: var(--space-md);
-    z-index: 1; /* Previene conflictos con la cabecera fija o menús */
-}
-
-/* Adaptación para dispositivos móviles */
-@media (max-width: 768px) {
-    .leaflet-map-container {
-        height: 280px;
-    }
-}

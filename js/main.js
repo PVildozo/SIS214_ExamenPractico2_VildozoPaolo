@@ -43,3 +43,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const header = document.querySelector('header[role="banner"]');
+    const navLinks = document.querySelectorAll('nav.main-nav a');
+
+    if (menuToggle) {
+        // Función auxiliar para actualizar el scroll del body
+        const updateBodyScroll = () => {
+            if (menuToggle.checked) {
+                document.body.classList.add('no-scroll');
+            } else {
+                document.body.classList.remove('no-scroll');
+            }
+        };
+
+        // 1. Escuchar el cambio de estado en el checkbox
+        menuToggle.addEventListener('change', updateBodyScroll);
+
+        // 2. Cerrar al hacer clic en un enlace de navegación
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (menuToggle.checked) {
+                    menuToggle.checked = false;
+                    updateBodyScroll();
+                }
+            });
+        });
+
+        // 3. Cerrar al hacer clic fuera de la cabecera
+        document.addEventListener('click', (event) => {
+            if (menuToggle.checked && header && !header.contains(event.target)) {
+                menuToggle.checked = false;
+                updateBodyScroll();
+            }
+        });
+
+        // 4. Accesibilidad: Cerrar al presionar la tecla Escape
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && menuToggle.checked) {
+                menuToggle.checked = false;
+                updateBodyScroll();
+            }
+        });
+    }
+});

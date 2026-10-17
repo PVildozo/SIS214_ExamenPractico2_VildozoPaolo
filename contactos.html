@@ -8,27 +8,39 @@
     <script src="js/main.js" defer></script>
     <script src="js/textarea_cont.js" defer></script>
     <script src="js/validar_fecha.js" defer></script>
+    <!-- SDK oficial de EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "0xH-7YstwK65uSUMp",
+      });
+   })();
+</script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-    <header role="banner" class="animated-header">
-        <div class="header-top">
+   <header role="banner" class="animated-header">
+    <div class="header-top">
         <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Cambiar tema de color">
             <span id="theme-icon">🌙</span> <span id="theme-text">Modo Oscuro</span>
         </button>
 
-    
-        <label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú de navegación">
+        <!-- Botón semántico del menú hamburguesa -->
+        <button type="button" 
+                id="hamburger-btn" 
+                class="hamburger-btn" 
+                aria-label="Abrir menú de navegación" 
+                aria-expanded="false" 
+                aria-controls="main-menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-        </label>
+        </button>
     </div>
 
-    <!-- Checkbox oculto para alternar la visibilidad del menú -->
-    <input type="checkbox" id="menu-toggle" class="menu-checkbox" aria-hidden="true">
-
-    <nav aria-label="Navegación principal del sitio" class="main-nav">
+    <!-- Menú de navegación principal -->
+    <nav id="main-menu" aria-label="Navegación principal del sitio" class="main-nav">
         <ul>
             <li><a href="index.html">Yo</a></li>
             <li><a href="perfil.html">Perfil Profesional</a></li>
@@ -42,50 +54,59 @@
             <li><a href="contactos.html">Contactos</a></li>
         </ul>
     </nav>
-    </header>
+</header>
 
     <main id="main-content" role="main">
-        <section id="contactos" aria-labelledby="contacto-heading">
-            <h2 id="contacto-heading">Contactos</h2>
-            
-            <form action="#" method="post" class="contact-form" aria-label="Formulario de contacto">
-                <p>
-                    <label for="nombre">Nombre Completo:</label>
-                    <input id="nombre" name="nombre" type="text" placeholder="Ej. Pepe Pérez" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" title="Ingresa solo letras y espacios">
-                </p>
-                <p>
-                    <label for="correo">Correo electrónico:</label>
-                    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required aria-required="true">
-                </p>
-                <p>
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="+591 78956427" pattern="^\+?[0-9\s]{8,15}$" required aria-required="true">
-                </p>
-                <p>
-                    <label for="fecha-hora">Selecciona fecha y hora de la cita:</label>
-                    <input type="datetime-local" id="fecha-hora" name="fecha_hora" required min="2026-09-12T09:00"/>
-                </p>
-                <p>
-                    <label for="comentario">Motivo / Mensaje:</label>
-                    <textarea id="comentario" name="comentario" rows="4" maxlength="300" placeholder="Escriba su motivo aquí..." required></textarea>
-                </p>
-                <div id="counter-info" class="counter-info">
-                    <span id="char-count">0</span> / <span>300</span>
-                </div>
-                <p>
-                    <button type="submit">Enviar</button>
-                    <button type="reset">Limpiar</button>
-                </p>
-            </form>
+        <section id="contacto" aria-labelledby="contacto-heading" class="animate-fade-in">
+    <h2 id="contacto-heading">Contacto</h2>
+    <p>Completa el formulario para enviar tu mensaje:</p>
 
-            <dialog open id="contacto-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
+    <!-- Formulario de contacto -->
+    <form id="contact-form" class="contact-form" novalidate>
+        <fieldset>
+            <legend>Información de Contacto</legend>
+
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="ejemplo@dominio.com">
+            </div>
+
+            <div class="form-group">
+                <label for="fecha-hora">Fecha y Hora Preferida:</label>
+                <input type="datetime-local" id="fecha-hora" name="fecha-hora" required>
+            </div>
+
+            <div class="form-group">
+                <label for="comentario">Mensaje o Comentario:</label>
+                <div class="textarea-wrapper">
+                    <textarea id="comentario" name="comentario" maxlength="300" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                    <span id="counter-info" class="counter-info">
+                        <span id="char-count">0</span> / 300
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Enviar Mensaje</button>
+                <button type="reset">Limpiar</button>
+            </div>
+        </fieldset>
+    </form>
+    <dialog open id="contacto-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
                 <h3 id="dialog-title">Horarios de contacto</h3>
                 <p id="dialog-desc">Para contactarse <strong>envíen un comprobante de la empresa a la que pertenece</strong> y la hora a la que se me contactará.</p>
                 <form method="dialog">
                     <button type="submit" aria-label="Cerrar aviso">Entendido</button>
                 </form>
-            </dialog>        
-        </section>
+            </dialog>  
+    <!-- Contenedor para la realimentación visual de envío (Éxito / Error) -->
+    <div id="form-feedback" aria-live="polite" class="form-feedback-container"></div>
+</section>
     </main>
 </body>
 </html>

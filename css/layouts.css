@@ -60,10 +60,6 @@ header[role="banner"] {
 /* ==========================================
    NAVEGACIÓN EN ESCRITORIO
    ========================================== */
-.menu-checkbox,
-.hamburger-btn {
-    display: none;
-}
 
 nav.main-nav,
 nav[aria-label="Navegacion principal del sitio"] {
@@ -184,18 +180,40 @@ section:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-body.no-scroll {
-    overflow: hidden;
-}
+
+
+
+    
 
 /* ==========================================
-   RESPONSIVIDAD TABLETS Y MÓVILES (<= 900px)
+   RESPONSIVIDAD MÓVILES PEQUEÑOS (<= 600px)
    ========================================== */
-@media (max-width: 900px) {
-    header[role="banner"] {
-        padding: var(--space-sm);
+@media (max-width: 600px) {
+    section {
+        padding: var(--space-lg) var(--space-md);
     }
 
+    .lista-habilidades li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nivel-manejo {
+        width: 100%;
+        align-items: flex-start;
+    }
+}
+/* ==========================================
+   MENÚ HAMBURGUESA CON BUTTON Y ARIA-EXPANDED
+   ========================================== */
+
+/* Ocultar el botón por defecto en escritorio */
+.hamburger-btn {
+    display: none;
+}
+
+@media (max-width: 900px) {
     .header-top {
         display: flex;
         justify-content: space-between;
@@ -203,13 +221,15 @@ body.no-scroll {
         width: 100%;
     }
 
-    /* Botón Hamburguesa */
+    /* Estilos del Botón Hamburguesa */
     .hamburger-btn {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px;
-        height: 21px;
+        width: 34px;
+        height: 24px;
+        background: transparent;
+        border: none;
         cursor: pointer;
         z-index: 1001;
         padding: 2px;
@@ -220,10 +240,10 @@ body.no-scroll {
         width: 100%;
         background-color: var(--color-gold-warm);
         border-radius: var(--radius-full);
-        transition: all var(--transition-fast);
+        transition: transform var(--transition-fast), opacity var(--transition-fast);
     }
 
-    /* Menú desplegable con scrollbar */
+    /* Menú desplegable oculto por defecto */
     nav.main-nav {
         max-height: 0;
         opacity: 0;
@@ -249,27 +269,27 @@ body.no-scroll {
         font-size: 0.85rem;
     }
 
-    /* Estado Abierto */
-    .menu-checkbox:checked ~ nav.main-nav {
+    /* ESTADO ABIERTO (Activado por JS mediante clase .is-active) */
+    nav.main-nav.is-active {
         max-height: 60vh;
         opacity: 1;
         padding-bottom: var(--space-sm);
     }
 
-    /* Animación del Icono a "X" */
-    .menu-checkbox:checked ~ .header-top .hamburger-btn .bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+    /* Animación del botón a icono de "X" */
+    .hamburger-btn.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
     }
 
-    .menu-checkbox:checked ~ .header-top .hamburger-btn .bar:nth-child(2) {
+    .hamburger-btn.is-active .bar:nth-child(2) {
         opacity: 0;
     }
 
-    .menu-checkbox:checked ~ .header-top .hamburger-btn .bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+    .hamburger-btn.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Scrollbar personalizado interno */
+    /* Scrollbar interno para móviles */
     nav.main-nav::-webkit-scrollbar {
         width: 5px;
     }
@@ -282,25 +302,5 @@ body.no-scroll {
     nav.main-nav::-webkit-scrollbar-thumb {
         background: var(--color-gold-old);
         border-radius: var(--radius-full);
-    }
-}
-
-/* ==========================================
-   RESPONSIVIDAD MÓVILES PEQUEÑOS (<= 600px)
-   ========================================== */
-@media (max-width: 600px) {
-    section {
-        padding: var(--space-lg) var(--space-md);
-    }
-
-    .lista-habilidades li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .nivel-manejo {
-        width: 100%;
-        align-items: flex-start;
     }
 }
